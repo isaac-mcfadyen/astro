@@ -95,6 +95,9 @@ export async function createVite(
 				},
 			],
 		},
+		ssr: {
+			noExternal: ['astro', 'astro/components'],
+		}
 	};
 
 	// Merge configs: we merge vite configuration objects together in the following order,
