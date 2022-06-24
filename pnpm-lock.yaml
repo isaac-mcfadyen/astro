@@ -1031,6 +1031,12 @@ importers:
       '@astrojs/svelte': link:../../../../integrations/svelte
       astro: link:../../..
 
+  packages/astro/test/fixtures/api-routes:
+    specifiers:
+      astro: workspace:*
+    dependencies:
+      astro: link:../../..
+
   packages/astro/test/fixtures/astro pages:
     specifiers:
       astro: workspace:*
@@ -1305,6 +1311,12 @@ importers:
     dependencies:
       astro: link:../../..
 
+  packages/astro/test/fixtures/astro-response:
+    specifiers:
+      astro: workspace:*
+    dependencies:
+      astro: link:../../..
+
   packages/astro/test/fixtures/astro-scripts:
     specifiers:
       astro: workspace:*
@@ -1354,6 +1366,12 @@ importers:
       astro: link:../../..
 
   packages/astro/test/fixtures/config-path:
+    specifiers:
+      astro: workspace:*
+    dependencies:
+      astro: link:../../..
+
+  packages/astro/test/fixtures/config-vite:
     specifiers:
       astro: workspace:*
     dependencies:
@@ -1463,6 +1481,18 @@ importers:
       '@fontsource/montserrat': 4.5.11
       astro: link:../../..
 
+  packages/astro/test/fixtures/hmr-css:
+    specifiers:
+      astro: workspace:*
+    dependencies:
+      astro: link:../../..
+
+  packages/astro/test/fixtures/import-ts-with-js:
+    specifiers:
+      astro: workspace:*
+    dependencies:
+      astro: link:../../..
+
   packages/astro/test/fixtures/integration-add-page-extension:
     specifiers:
       astro: workspace:*
@@ -1522,6 +1552,12 @@ importers:
       astro: workspace:*
     dependencies:
       '@astrojs/preact': link:../../../../integrations/preact
+      astro: link:../../..
+
+  packages/astro/test/fixtures/page-level-styles:
+    specifiers:
+      astro: workspace:*
+    dependencies:
       astro: link:../../..
 
   packages/astro/test/fixtures/postcss:
@@ -1653,12 +1689,36 @@ importers:
       '@astrojs/solid-js': link:../../../../integrations/solid
       astro: link:../../..
 
+  packages/astro/test/fixtures/ssr-api-route:
+    specifiers:
+      astro: workspace:*
+    dependencies:
+      astro: link:../../..
+
+  packages/astro/test/fixtures/ssr-assets:
+    specifiers:
+      astro: workspace:*
+    dependencies:
+      astro: link:../../..
+
+  packages/astro/test/fixtures/ssr-dynamic:
+    specifiers:
+      astro: workspace:*
+    dependencies:
+      astro: link:../../..
+
   packages/astro/test/fixtures/ssr-env:
     specifiers:
       '@astrojs/preact': workspace:*
       astro: workspace:*
     dependencies:
       '@astrojs/preact': link:../../../../integrations/preact
+      astro: link:../../..
+
+  packages/astro/test/fixtures/ssr-hoisted-script:
+    specifiers:
+      astro: workspace:*
+    dependencies:
       astro: link:../../..
 
   packages/astro/test/fixtures/ssr-markdown:
@@ -1676,6 +1736,18 @@ importers:
       astro: link:../../..
 
   packages/astro/test/fixtures/ssr-redirect:
+    specifiers:
+      astro: workspace:*
+    dependencies:
+      astro: link:../../..
+
+  packages/astro/test/fixtures/ssr-request:
+    specifiers:
+      astro: workspace:*
+    dependencies:
+      astro: link:../../..
+
+  packages/astro/test/fixtures/ssr-response:
     specifiers:
       astro: workspace:*
     dependencies:
@@ -1744,6 +1816,12 @@ importers:
   packages/astro/test/fixtures/static-build/pkg:
     specifiers: {}
 
+  packages/astro/test/fixtures/status-code:
+    specifiers:
+      astro: workspace:*
+    dependencies:
+      astro: link:../../..
+
   packages/astro/test/fixtures/streaming:
     specifiers:
       astro: workspace:*
@@ -1771,6 +1849,18 @@ importers:
       autoprefixer: 10.4.7_postcss@8.4.14
       postcss: 8.4.14
       tailwindcss: 3.0.24
+
+  packages/astro/test/fixtures/type-imports:
+    specifiers:
+      astro: workspace:*
+    dependencies:
+      astro: link:../../..
+
+  packages/astro/test/fixtures/unused-slot:
+    specifiers:
+      astro: workspace:*
+    dependencies:
+      astro: link:../../..
 
   packages/astro/test/fixtures/vue-component:
     specifiers:
