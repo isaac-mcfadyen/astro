@@ -14,6 +14,7 @@ import { createVite } from '../create-vite.js';
 import { info, LogOptions, warn, warnIfUsingExperimentalSSR } from '../logger/core.js';
 import * as msg from '../messages.js';
 import { apply as applyPolyfill } from '../polyfill.js';
+import { filterByResolvedDeps } from '../util.js';
 
 export interface DevOptions {
 	logging: LogOptions;
@@ -45,14 +46,14 @@ export default async function dev(config: AstroConfig, options: DevOptions): Pro
 			mode: 'development',
 			server: { host },
 			optimizeDeps: {
-				include: [
+				include: filterByResolvedDeps([
 					'astro/client/idle.js',
 					'astro/client/load.js',
 					'astro/client/visible.js',
 					'astro/client/media.js',
 					'astro/client/only.js',
 					...rendererClientEntries,
-				],
+				], config.root),
 			},
 		},
 		{ astroConfig: config, logging: options.logging, mode: 'dev' }
