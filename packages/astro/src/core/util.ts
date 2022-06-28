@@ -23,6 +23,20 @@ export function padMultilineString(source: string, n = 2) {
 	return lines.map((l) => ` `.repeat(n) + l).join(`\n`);
 }
 
+export function filterByResolvedDeps(deps: string[] | Set<string>, projectRoot: URL): string[] {
+	let noExternalDeps = []
+	for (const dep of deps) {
+		try {
+			resolveDependency(dep, projectRoot)
+			noExternalDeps.push(dep)
+		} catch {
+			// ignore dependency if *not* installed / present in your project
+			// prevents hard error from Vite!
+		}
+	}
+	return noExternalDeps
+}
+
 const STATUS_CODE_REGEXP = /^\/?[0-9]{3}$/;
 
 /**

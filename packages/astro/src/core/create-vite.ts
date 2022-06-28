@@ -14,7 +14,7 @@ import astroIntegrationsContainerPlugin from '../vite-plugin-integrations-contai
 import jsxVitePlugin from '../vite-plugin-jsx/index.js';
 import markdownVitePlugin from '../vite-plugin-markdown/index.js';
 import astroScriptsPlugin from '../vite-plugin-scripts/index.js';
-import { resolveDependency } from './util.js';
+import { filterByResolvedDeps, resolveDependency } from './util.js';
 
 // note: ssr is still an experimental API hence the type omission from `vite`
 export type ViteConfigWithSSR = vite.InlineConfig & { ssr?: vite.SSROptions };
@@ -120,7 +120,7 @@ export async function createVite(
 			],
 		},
 		ssr: {
-			noExternal: getSsrNoExternalDeps(astroConfig.root),
+			noExternal: filterByResolvedDeps(ALWAYS_NOEXTERNAL, astroConfig.root),
 		}
 	};
 
