@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 import * as vite from 'vite';
 import { BuildInternals, createBuildInternals } from '../../core/build/internal.js';
 import { prependForwardSlash } from '../../core/path.js';
-import { emptyDir, removeDir, resolveDependency } from '../../core/util.js';
+import { emptyDir, removeDir } from '../../core/util.js';
 import { runHookBuildSetup } from '../../integrations/index.js';
 import { rollupPluginAstroBuildCSS } from '../../vite-plugin-build-css/index.js';
 import type { ViteConfigWithSSR } from '../create-vite';
