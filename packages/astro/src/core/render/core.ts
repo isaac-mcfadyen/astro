@@ -143,7 +143,13 @@ export async function render(opts: RenderOptions): Promise<Response> {
 	if (!Component.isAstroComponentFactory) {
 		const props: Record<string, any> = { ...(pageProps ?? {}), 'server:root': true };
 		const html = await renderComponent(result, Component.name, Component, props, null);
-		return new Response(html.toString(), result.response);
+		return new Response(html.toString(), {
+			...result.response,
+			headers: [
+				['Content-Type', 'text/html;charset=utf-8'],
+				['Content-Length', `${Buffer.byteLength(html.toString(), 'utf-8')}`]
+			]
+		});
 	} else {
 		return await renderPage(result, Component, pageProps, null);
 	}
